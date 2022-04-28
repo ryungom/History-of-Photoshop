@@ -1,0 +1,111 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+
+
+* {margin:0px; padding:0px;}
+h1,h2,h3,p,span {font-size:inherit; font-weight:inherit;}
+
+body {
+  /* padding:0 15rem; */
+}
+#header {
+  height:30rem;
+  background:url(images/cover.png) no-repeat center / cover;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:end;
+  padding-bottom:1rem;
+}
+
+#header>h1 {font:1rem/1 "arial"; color:#fff; margin-bottom:0.8rem;}
+#header>h2 {
+  font:1.5rem/1 "arial"; color:#fff; letter-spacing:0.5rem;
+  position:relative;
+}
+#header>h2::after {
+  content:' '; display:block; position:absolute;
+  width:16rem; height:0.1rem; background:#235fab;
+  transform:translate(-50%,-50%); left:50%; top:50%;
+}
+
+#main {background:#222; display:flex; justify-content:center; padding-top:80px;}
+#main>section {width:705px; position:relative; margin-bottom:100px;}
+
+#main>section>article {
+  width:47.5%; background:#111;
+  display:flex; flex-direction:column; padding:20px 20px 0 20px; border-radius:10px;
+  box-sizing:border-box; position:relative;
+}
+#main>section>article:nth-child(odd) {margin-right:auto;}
+#main>section>article:nth-child(odd)::after {
+  display:block; content:' '; position:absolute; top:50%; right:-10px;
+  transform:translateY(-50%); 
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #111;
+  border-right: 10px solid none;
+  border-bottom: 10px solid transparent;
+}
+#main>section>article:nth-child(even) {margin-left:auto;}
+#main>section>article:nth-child(even)::after {
+  display:block; content:' '; position:absolute; top:50%; left:-10px;
+  transform:translateY(-50%); 
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid none;
+  border-right: 10px solid #111;
+  border-bottom: 10px solid transparent;
+}
+
+#main>section>article>aside>img {width:80px; height:80px; margin-top:-4rem;}
+#main>section>article:nth-child(odd)>aside>img {float:left;}
+#main>section>article:nth-child(even)>aside>img {float:right;}
+
+
+#main>section>article:nth-child(odd)>aside>.title {float:right; margin-bottom:20px;}
+#main>section>article:nth-child(even)>aside>.title {float:left; margin-bottom:20px;}
+
+
+#main>section>article>aside>.title>.year {
+  font:bold 4rem/1 "Kirang Haerang"; color:#1c90ff; letter-spacing:-0.2rem; text-align:right; margin-bottom:5px;
+}
+#main>section>article>aside>.title>.version {font:0.8rem/1 "arial"; color:#eee;}
+#main>section>article:nth-child(odd)>aside>.title>.version {text-align:right;}
+#main>section>article:nth-child(even)>aside>.title>.version {text-align:left;}
+
+
+#main>section>article>.content {
+  width:auto; background:#000; border-radius:20px 20px 0 0; box-sizing:border-box;
+  padding:15px;
+}
+#main>section>article>.content>.summary {
+  font:0.4rem/1 "arial"; color:#aaa; display:block; margin-bottom:5px;
+}
+#main>section>article>.content>.summary::before {
+  content:''; display:inline-block; width:0.4rem; height:0.4rem; background-color:#aaa; border-radius:50%;
+  margin-right:8px;
+}
+#main>section>article>.content>span:last-child {
+  margin-bottom:0px;
+}
+
+#main>section>article>.point {
+  width:10px; height:10px; border-radius:50%; background:#1c90ff;
+  position:absolute; top:50%; transform:translateY(-50%); z-index:20;
+}
+#main>section>article:nth-child(odd)>.point {right:-23px;}
+#main>section>article:nth-child(even)>.point {left:-23px;}
+#main>section>article>.point::after {
+  display:block; content:' ' ;
+  position:absolute; transform:translate(-50%,-50%); top:50%; left:50%;
+  width:5px; height:5px; background:#222; border-radius:50%;
+}
+
+#main>section>.center-line {
+  width:3px; height:100%; background:#1c90ff; margin-top:auto;
+  position:absolute; transform:translateX(-50%); top:4.5%; left:50%;
+  z-index:10;
+}
